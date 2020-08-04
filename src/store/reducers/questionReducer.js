@@ -2,7 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {questions: []}
 
-const rootReducer = (state = initialState, action) => {
+const questionReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.SET_DATA:
             return {
@@ -13,4 +13,4 @@ const rootReducer = (state = initialState, action) => {
             return state;
     }
 }
-export default rootReducer;
+export default questionReducer;

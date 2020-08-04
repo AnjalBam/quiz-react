@@ -15,4 +15,5 @@ export const Button = styled.button `
 export const Wrapper = styled.div `
     background: ${props => props.theme.bgPrimary};
     padding: 1rem;
+    color: ${props => props.theme.colorPrimary};
 `

@@ -16,3 +16,10 @@ export const setDataFromAPI = () => {
         })
     }
 }
+
+export const setTheme = isDarkTheme => {
+    return {
+        type: actions.SET_THEME,
+        payload: isDarkTheme
+    }
+}

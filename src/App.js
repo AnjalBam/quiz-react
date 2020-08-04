@@ -7,34 +7,33 @@ import {ThemeProvider} from "styled-components";
 import * as themes from './components/@mainUI/Theme'
 import {setDataFromAPI} from "./store/actions/actions";
 
-function App(props) {
+function App({setDataFromAPI, isDarkTheme}) {
 
-    const [isDark, setIsDark] = useState(false)
+    // const [isDark, setIsDark] = useState(false)
     useEffect(() => {
-        props.setDataFromAPI();
+        setDataFromAPI();
     }, [])
-
+    // const setTheme = () => {
+    //     setIsDark(!isDark)
+    // }
     return (
-        <ThemeProvider theme={isDark ? themes.DarkTheme : themes.LightTheme}>
-            <h1>Hello World!</h1>
-
-            <button onClick={() => setIsDark(!isDark)}>Toggle theme</button>
-            <button onClick={() => console.log(props.questions)}>View state</button>
-            <MainComponent />
-        </ThemeProvider>
+        <div>
+            <ThemeProvider theme={isDarkTheme ? themes.DarkTheme : themes.LightTheme}>
+                <MainComponent/>
+            </ThemeProvider>
+        </div>
     );
 }
 
-const mapStateToProps = (state) => {
-    console.log(state)
-    return {
-        questions: state.questions,
-    }
-}
 
 const mapDispatchToProps = dispatch => {
     return {
         setDataFromAPI: () => dispatch(setDataFromAPI()),
+    }
+}
+const mapStateToProps = state => {
+    return {
+        isDarkTheme: state.theme.isDarkTheme,
     }
 }
 
