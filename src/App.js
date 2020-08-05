@@ -10,7 +10,7 @@ import {setDataFromAPI} from "./store/actions/actions";
 function App({setDataFromAPI, isDarkTheme}) {
     useEffect(() => {
         setDataFromAPI();
-    }, [])
+    }, [setDataFromAPI])
     return (
         <div>
             <ThemeProvider theme={isDarkTheme ? themes.DarkTheme : themes.LightTheme}>

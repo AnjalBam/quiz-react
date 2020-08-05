@@ -15,12 +15,10 @@ const MainComponent = props => {
     props.setTheme(isDarkTheme);
     return (
         <Wrapper>
-            {/* eslint-disable-next-line react/jsx-no-undef */}
             <Switch getCheckedValue={getCheckedValue} />
             <br/>
             <h1>Main component</h1>
             <Button onClick={() => console.log(props.isDarkTheme)}>Help me</Button>
-
         </Wrapper>
     )
 }
