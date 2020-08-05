@@ -1,6 +1,6 @@
 import * as actionTypes from '../actions/actionTypes';
 
-const initialState = {questions: []}
+const initialState = {questions: [], isLoading: false, errors: ''}
 
 const questionReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -8,6 +8,12 @@ const questionReducer = (state = initialState, action) => {
             return {
                 ...state,
                 questions: action.data
+            }
+        case actionTypes.START_DATA_LOADING:
+            return  {
+                ...state,
+                isLoading: true,
+
             }
         default:
             return state;

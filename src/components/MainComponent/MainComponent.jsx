@@ -1,20 +1,30 @@
 import React from "react";
 import {connect} from "react-redux";
-import {Wrapper, Button} from "../@mainUI";
-import NavBar from "../NavBar/NavBar";
 import {BrowserRouter} from "react-router-dom";
+
+
+import NavBar from "../NavBar/NavBar";
+import Routes from "../Routes/Routes";
+import {ContainerWrapper, Wrapper} from "../@mainUI";
+import Footer from "../Footer/Footer";
+import {MainComponentWrapper} from "./MainComponent.styles";
 
 
 const MainComponent = props => {
 
     return (
         <BrowserRouter>
-            <NavBar/>
-            <Wrapper>
-                <br/>
-                <h1>Main component</h1>
-                <Button onClick={() => console.log(props.isDarkTheme)}>Help me</Button>
-            </Wrapper>
+            <MainComponentWrapper>
+
+                <NavBar/>
+                <Wrapper>
+                    <ContainerWrapper>
+                        <Routes/>
+                    </ContainerWrapper>
+                </Wrapper>
+                <Footer/>
+
+            </MainComponentWrapper>
         </BrowserRouter>
     )
 }

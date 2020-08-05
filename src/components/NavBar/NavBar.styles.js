@@ -6,7 +6,7 @@ export const NavBarWrapper = styled.nav `
     color: ${props => props.theme.colorPrimary};
     text-align: center;
     border-bottom: 1px solid ${props => props.theme.colorSecondary };
-    box-shadow: 0px 0px 100px ${props => props.theme.colorSecondary };
+    box-shadow: 0px -10px 30px ${props => props.theme.colorSecondary };
 `;
 
 export const NavLinksWrapper = styled.div `

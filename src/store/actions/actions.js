@@ -1,18 +1,35 @@
 import * as actions from './actionTypes';
 import axios from 'axios';
 
-export const setData = (data) => ({
-    type: actions.SET_DATA,
-    data
-})
 
-export const setDataFromAPI = () => {
+const startDataLoading = () => {
+    return {
+        type: actions.START_DATA_LOADING
+    }
+}
+
+const dataLoadingSuccess = (data) => {
+    return {
+        type: actions.DATA_LOADING_SUCCESS,
+        data
+    }
+}
+
+const dataLoadingFailure = () => {
+    return {
+        type: actions.DATA_LOADING_FAILURE
+    }
+}
+
+export const setDataFromAPI = (apiUrl) => {
     return (dispatch) => {
-        let data = []
-        return axios.get('http://127.0.0.1:8000/list/').then(response => {
-            data = response.data
-            console.log(data)
-            dispatch(setData(data));
+        dispatch(startDataLoading());
+        return axios.get(apiUrl).then(response => {
+            console.log(response.data)
+            dispatch(dataLoadingSuccess(response.data));
+        }).catch(err => {
+            console.error({err});
+            dispatch(dataLoadingFailure())
         })
     }
 }
