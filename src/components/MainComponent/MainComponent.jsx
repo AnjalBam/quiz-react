@@ -9,8 +9,7 @@ const MainComponent = props => {
     const [isDarkTheme, setIsDarkTheme] = useState(false)
     const getCheckedValue = (value) => {
         console.log({value});
-        setIsDarkTheme(value)
-
+        setIsDarkTheme(value);
     }
     props.setTheme(isDarkTheme);
     return (
