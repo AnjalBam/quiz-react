@@ -87,7 +87,7 @@ const Question = props => {
                                         Next
                                     </styles.ButtonWithDisabledStyle>)
                                     : questionAttempted
-                                        ? <StyledLink to='/result' onClick={quizComplete}>Submit</StyledLink>
+                                        ? <StyledLink to='/result/' onClick={quizComplete}>Submit</StyledLink>
                                         : null}
                             </styles.QuestionBottomWrapper>
                         </div>

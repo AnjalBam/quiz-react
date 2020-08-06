@@ -41,7 +41,7 @@ const Quiz = props => {
                         You can proceed to the quiz now.
                     </styles.WelcomeHeading>
 
-                    <StyledLink to='/question' onClick={() => fetchAPIData(baseAPIUrl)}>StartQuiz</StyledLink>
+                    <StyledLink to='/question/' onClick={() => fetchAPIData(baseAPIUrl)}>StartQuiz</StyledLink>
                     <br/>
                     <br/>
                     <Button onClick={() => props.resetUserData()}>Register as a new user</Button>
