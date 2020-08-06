@@ -18,7 +18,7 @@ const Quiz = props => {
         setName('')
     }
 
-    const baseAPIUrl = 'http://quiz-app-backend-2020.herokuapp.com/list/';
+    const baseAPIUrl = 'https://quiz-app-backend-2020.herokuapp.com/list/';
 
     const fetchAPIData = (apiUrl) => {
         props.setDataFromAPI(apiUrl);
