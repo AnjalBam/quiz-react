@@ -1,4 +1,4 @@
-import {INCREASE_USER_SCORE, RESET_STATS, USER_REGISTER} from "./actionTypes";
+import {COMPLETE_QUIZ, INCREASE_USER_SCORE, RESET_STATS, USER_REGISTER} from "./actionTypes";
 
 export const increaseUserScore = () => {
     return {
@@ -18,3 +18,8 @@ export const resetUserData = () => {
     }
 }
 
+export const completeQuiz = () => {
+    return {
+        type: COMPLETE_QUIZ,
+    }
+}

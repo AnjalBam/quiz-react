@@ -1,4 +1,4 @@
-import {INCREASE_USER_SCORE, RESET_STATS, USER_REGISTER} from "../actions/actionTypes";
+import {COMPLETE_QUIZ, INCREASE_USER_SCORE, RESET_STATS, USER_REGISTER} from "../actions/actionTypes";
 
 const initialState = {
     isUserRegistered: false,
@@ -27,6 +27,11 @@ const userReducer = (state = initialState, action) => {
                 isUserRegistered: false,
                 isQuizCompleted: false,
                 score: 0,
+            }
+        case COMPLETE_QUIZ:
+            return  {
+                ...state,
+                isQuizCompleted: true,
             }
         default:
             return state;

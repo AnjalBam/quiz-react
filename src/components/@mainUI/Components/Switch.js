@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Switch = ({getCheckedValue}) => {
     const handleChange = (e) => {
-        console.log(e.target.checked);
+        // console.log(e.target.checked);
         getCheckedValue(e.target.checked);
     }
     return (

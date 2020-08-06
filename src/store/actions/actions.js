@@ -26,10 +26,10 @@ export const setDataFromAPI = (apiUrl) => {
     return (dispatch) => {
         dispatch(startDataLoading());
         return axios.get(apiUrl).then(response => {
-            console.log(response.data)
+           // console.log(response.data)
             dispatch(dataLoadingSuccess(response.data));
         }).catch(err => {
-            console.error({err});
+           // console.error({err});
             dispatch(dataLoadingFailure(err))
         })
     }

@@ -1,4 +1,5 @@
 import styled, {keyframes} from "styled-components";
+import {Button} from "../@mainUI";
 
 export const QuestionWrapper = styled.div`
     max-width: 800px;
@@ -64,3 +65,22 @@ export const StyledListItem = styled.li `
         border: 2px solid ${props => props.theme.mainText};
     }
 `;
+
+export const QuestionBottomWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem 0.5rem;
+    flex-wrap: wrap;
+    & p {
+        font-size: 1.5rem;
+    }
+`;
+
+export const ButtonWithDisabledStyle = styled(Button) `
+    &:disabled {
+        color: ${props => props.theme.colorSecondary};
+        border: 2px solid ${props => props.theme.colorSecondary};
+        cursor: not-allowed;
+    }
+`

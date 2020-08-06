@@ -7,7 +7,7 @@ import {connect} from "react-redux";
 const NavBar = props => {
     const [isDarkTheme, setIsDarkTheme] = useState(false)
     const getCheckedValue = (value) => {
-        console.log({value});
+        // console.log({value});
         setIsDarkTheme(value);
     }
     props.setTheme(isDarkTheme);
@@ -17,7 +17,7 @@ const NavBar = props => {
                 <styles.StyledLink to='/'>Quiz</styles.StyledLink>
 
                 <styles.ToggleSwitchWrapper>
-                    <styles.StyledIcon className='fas fa-sun' />
+                    <styles.StyledIcon className='fas fa-sun'/>
                     <Switch getCheckedValue={getCheckedValue}/>
                     <styles.StyledIcon className="fas fa-moon"/>
                 </styles.ToggleSwitchWrapper>

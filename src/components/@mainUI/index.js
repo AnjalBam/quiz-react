@@ -11,7 +11,7 @@ export const Button = styled.button `
     color: ${props => props.theme.colorPrimary};
     border: 2px solid ${props => props.theme.colorPrimary};
     
-    &:hover {
+    &:hover:enabled {
         background: ${props => props.theme.colorPrimary};
         padding: 1rem 4rem;
         box-shadow: 0px 0px 10px ${props => props.theme.colorPrimary};
