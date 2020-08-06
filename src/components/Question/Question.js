@@ -114,7 +114,7 @@ const Question = props => {
                     ? getLoader()
                     : getIfUserRegistered()}
 
-            <button disabled={!questionAttempted} onClick={() => console.log({isAnswerCorrect})}>IsCorrect?</button>
+            {/*<button disabled={!questionAttempted} onClick={() => console.log({isAnswerCorrect})}>IsCorrect?</button>*/}
         </styles.QuestionWrapper>
     )
 
