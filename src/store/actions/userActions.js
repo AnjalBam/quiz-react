@@ -1,12 +1,4 @@
-import {INCREASE_USER_SCORE, RESET_STATS, SET_USER_NAME, USER_REGISTER} from "./actionTypes";
-
-
-// export const setUserName = name => {
-//     return {
-//         type: SET_USER_NAME,
-//         name,
-//     }
-// }
+import {INCREASE_USER_SCORE, RESET_STATS, USER_REGISTER} from "./actionTypes";
 
 export const increaseUserScore = () => {
     return {

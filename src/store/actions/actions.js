@@ -15,9 +15,10 @@ const dataLoadingSuccess = (data) => {
     }
 }
 
-const dataLoadingFailure = () => {
+const dataLoadingFailure = (error) => {
     return {
-        type: actions.DATA_LOADING_FAILURE
+        type: actions.DATA_LOADING_FAILURE,
+        error,
     }
 }
 
@@ -29,7 +30,7 @@ export const setDataFromAPI = (apiUrl) => {
             dispatch(dataLoadingSuccess(response.data));
         }).catch(err => {
             console.error({err});
-            dispatch(dataLoadingFailure())
+            dispatch(dataLoadingFailure(err))
         })
     }
 }

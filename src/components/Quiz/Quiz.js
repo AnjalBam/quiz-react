@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {connect} from 'react-redux';
 
-import {Button} from "../@mainUI";
+import {Button, StyledLink} from "../@mainUI";
 import * as styles from './Quiz.styles';
 import {registerUser, resetUserData} from "../../store/actions/userActions";
 import {setDataFromAPI} from "../../store/actions/actions";
@@ -32,9 +32,18 @@ const Quiz = props => {
             {props.isUserRegistered
                 ?
                 <styles.WelcomeWrapper>
-                    <styles.WelcomeHeading><span>Hello {props.name}</span></styles.WelcomeHeading>
-                    <styles.WelcomeHeading>Thank you for registering! <br/> You can proceed to the quiz now.</styles.WelcomeHeading>
-                    <styles.StyledLink to='/question' onClick={() => fetchAPIData(baseAPIUrl)}>StartQuiz</styles.StyledLink> <br/> <br/>
+                    <styles.WelcomeHeading>
+                        <span>Hello {props.name}</span>
+                    </styles.WelcomeHeading>
+
+                    <styles.WelcomeHeading>
+                        Thank you for registering! <br/>
+                        You can proceed to the quiz now.
+                    </styles.WelcomeHeading>
+
+                    <StyledLink to='/question' onClick={() => fetchAPIData(baseAPIUrl)}>StartQuiz</StyledLink>
+                    <br/>
+                    <br/>
                     <Button onClick={() => props.resetUserData()}>Register as a new user</Button>
                 </styles.WelcomeWrapper>
                 :
