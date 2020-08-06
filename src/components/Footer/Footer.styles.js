@@ -21,3 +21,12 @@ export const FooterHead = styled.p `
     padding-bottom: 10px;
     font-weight: regular;
 `;
+
+export const StyledLink = styled.a `
+    display: inline-block;
+    color: ${props => props.theme.mainText};
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+`;
