@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import * as styles from './Result.styles'
 import {StyledLink} from "../@mainUI";
+import {resetUserScore} from "../../store/actions/userActions";
 
 const Result = props => {
 
@@ -11,7 +12,7 @@ const Result = props => {
                 <styles.StyledIcon className='fas fa-thumbs-up'/>
                 <styles.Header>Congratulations {props.name}!</styles.Header>
                 <styles.ScoreWrapper>You Scored: {props.score}/{props.question?.count}</styles.ScoreWrapper>
-                <StyledLink to='/'>Return Home</StyledLink>
+                <StyledLink to='/'  onClick={() => props.resetUserScore()}>Return Home</StyledLink>
             </styles.ResultWrapper>
         )
     }
@@ -24,7 +25,7 @@ const Result = props => {
                 <styles.ScoreWrapper>
                     You haven't completed the quiz! <br/>Please Complete the quiz!
                 </styles.ScoreWrapper>
-                <StyledLink to='/'>Return Home</StyledLink>
+                <StyledLink to='/' onClick={() => props.resetUserScore()}>Return Home</StyledLink>
             </styles.ResultWrapper>
         )
     }
@@ -46,4 +47,10 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Result);
+const mapDispatchToProps = dispatch => {
+    return {
+        resetUserScore: () => dispatch(resetUserScore()),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Result);
